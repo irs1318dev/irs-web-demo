@@ -1,0 +1,176 @@
+<!--
+  Flask Application for Scouting Technology Demo
+  HTML, CSS, and JavaScript Tab
+  Stacy Irwin, 10 January 2022
+
+  This file contains one of several HTML child templates for a simple
+  Flask application that demonstrates the technologies and frameworks
+  that we'll use in the IRS scouting system for 2022. This file is
+  served by the Flask Python module contained in demo-app.py.
+
+  The Flask server will insert the HTML in this file into the
+  templates/index.html file. See templates.index.html for details.
+-->
+
+<div class="uk-container">
+  <p>
+    A <em>Tech Stack</em> is a list of the langauges, packages, 
+    protocols, and frameworks that are used to build an application.
+    This page describes the technologies that are used in this demo
+    app.
+  </p>
+  <p>
+    This demo app is a client-server application, which means that
+    multiple users (clients) can interact with a singler server.
+    In this application, the client is a web browser and the server
+    is a web server. This app can also be called a web application
+    because users interact with the application via web pages.
+  </p>
+
+  <p>
+    The HTML code for this tab is in the
+    <em>templates/tech-stack.html</em> file.
+  </p>
+  <h3>Client Side Tech Stack</h3>
+  <p>
+    <dt>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+      HTML</a></dt>
+    <dd>
+      The demo app uses the most modern version of HTML, HTML5.
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+      JavaScript
+    </a></dt>
+    <dd>
+      The demo app uses the newest version of JavaScript
+      (ECMAScript 2018) and is not expected to work in older browsers
+      (pre-2017). We are targeting Google's Chrome browser
+      (version 63 or newer, Dec 2017), but the system should work in
+      other modern browsers such as Microsoft's Edge (ver 79 or newer,
+      Jan 2020) or Apple's Safari (ver 11, Sep 2017) browsers.
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+      Cascading Style Sheets (CSS)</a></dt>
+    <dd>
+      Cascading style sheets control fonts, colors, margins, padding,
+      borders, and countless other visual aspects of a web page. CSS
+      doesn't have versions in the same sense as HTML or JavaScript.
+      If a CSS feature works in the browsers listed in the JavaScript
+      section and it's defined in the
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+      Mozilla CSS reference</a>, then it's fair game.
+    </dd>
+    <dt> <a href="https://getuikit.com/">
+      UIKit CSS Framework</a></dt>
+    <dd>
+      The app uses the <a href="https://getuikit.com/">
+      UIkit CSS Framework</a>. CSS Frameworks provide sophisticated
+      navigation and formatting with much less effort than what would
+      be required if we were to write all CSS from scratch. UIKit is an
+      attractive framework because it is a minimal framework that does not
+      depend on other frameworks, but still has the features needed for
+      the demo.
+    </dd>
+    <dt><a href="https://socket.io/">Socket.io</a></dt>
+    <dd>
+      Socket.io is a JavaScript module that makes it easier to
+      implement web socket connections. Web sockets are an Internet
+      communications protocol that, like HTTP, can be used by web
+      servers and browsers for communication. With HTTP, web servers
+      can only send information to a web browser after receiving an
+      HTTP request. Web socket connections allow browsers to push
+      information to web clients without first receiving a request.
+      Note that we will only be using Socket.io's client features.
+      We'll use the Flask-SocketIO extension for server-side
+      web socket programming.
+    </dd>
+  <h3>Server Side Technology Stack</h3>
+    <dt><a href="https://docs.python.org/3.9/">Python</a></dt>
+    <dd>
+      Python is a dynamic interpreted language that is relatively easy
+      to learn and is well suited for data analysis tasks. the app uses
+      Python version 3.9, which is the 2nd-newest version.
+    </dd>
+    <dt><a href="https://flask.palletsprojects.com/en/2.0.x/">
+      Flask Framework
+    </a></dt>
+    <dd>
+      A Python module for creating dynamic web pages. Dynamic pages are
+      created on the fly, when users request them.
+    </dd>
+    <dt><a href="https://jinja.palletsprojects.com/en/3.0.x/">
+      Jinja Templates
+    </a></dt>
+    <dd>
+      Flask is designed to work with the Jinja package, which provides
+      tools to assemble web pages in response to user queries. See the
+      <a href="https://flask.palletsprojects.com/en/2.0.x/">
+        Flask Documentation</a> or the 
+        <a href="https://jinja.palletsprojects.com/en/3.0.x/">
+          Jinja Documentation</a>
+      for more information on Jinja templates.
+    </dd>
+    <dt><a href="https://flask-socketio.readthedocs.io/en/latest/">
+      Flask-SocketIO</a></dt>
+    <dd>
+      Flask-SocketIO is an extension to the Flask framework that
+      enables communication via web sockets. It works with the
+      Socket.io JavaScript framework. See the
+      <a href="https://flask-socketio.readthedocs.io/en/latest/"></a>
+      official Flask-SocketIO documentaion</a> for more information
+      on Flask-SocketIO.
+    </dd>
+    <dt><a href="https://eventlet.net/">
+      Eventlet Server</a></dt>
+    <dd>
+      Eventlet is a Python networking library that contains web server
+      functionality and supports web socket communications.
+      We don't neet to interact with Eventlet directly,
+      since the Flask-SocketIO package will automatically start an
+      Eventlet web server if it's installed. See the comments in
+      tempates/index.html and the conda-setup.ps1 file for instructions
+      on how to set up you Python environment so that it includes
+      Eventlet.
+    </dd>
+    <h3>Scouting System Tech Stack</h3>
+    <p>
+      The scouting system will use all of the components listed above
+      and a few more, including:
+    </p>
+    <ul>
+      <li>
+        <dt>
+          <a href="https://www.sqlite.org/index.html">SQLite</a>
+        </dt>
+        <dd>
+          A simple, effective relational database.
+        </dd>
+      </li>
+      <li>
+        <dt><a href="https://docs.python.org/3/library/sqlite3.html">
+          SQlite Python Package</a></dt>
+        <dd>
+          The <code>sqlite</code> package allows us to interact with
+          SQLite databases via Python code.
+        </dd>
+      </li>
+      <li>
+        <dt>
+          <a href="https://pandas.pydata.org/pandas-docs/stable/">
+          Pandas</a>
+        </dt>
+        <dd>A Python package for manipulating tabular data.</dd>
+      </li>
+      <li>
+        <dt>
+          <a href="https://docs.bokeh.org/en/latest/">Bokeh</a>
+        </dt>
+        <dd>
+          A Python package for creating interactive data
+          visualizations.
+        </dd>
+      </li>
+    </ul>
+</div>
+

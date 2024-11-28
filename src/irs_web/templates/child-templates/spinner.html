@@ -1,0 +1,92 @@
+<!--
+  Flask Application for Scouting Technology Demo
+  Spinner, Flask, and AJAX Tab
+  Stacy Irwin, 10 January 2022
+
+  This file contains one of several HTML child templates for a simple
+  Flask application that demonstrates the technologies and frameworks
+  that we'll use in the IRS scouting system for 2022. This file is
+  served by the Flask Python module contained in demo-app.py.
+
+  The Flask server will insert the HTML in this file into the
+  templates/index.html file. See templates.index.html for details.
+-->
+
+<!--
+  JavaScript functions needed for the spinner demo are contained in the
+  static/js/spinner.js file. Read the detailed comments in that file to
+  understand how this example works.
+  
+  Note the `defer` attribute, which ensures the script doesn't run
+  until the entire page is loaded.
+-->
+<script src="static/js/spinner.js" defer></script>
+
+<!-- Custom Styles for the spinner demo -->
+<style>
+  table.spinner {
+    border: 1px solid;  
+  }
+  input.spinner {
+    text-align: center;
+    font-size: 20px;
+    width: 60px;
+    border-style: none;
+  }
+  label.spinner {
+    font-size: 25px;
+  }
+</style>
+
+<div uk-grid class="uk-grid-medium">
+  <div class="uk-card uk-card-default uk-card-body uk-width-large">
+    <h3 class="uk-card-title">Spinner</h3>
+    <form>
+      <!-- Using an HTML table to arrange the different parts of the spinner -->
+      <table class="spinner">
+        <tr>
+          <td><label for="outerGoals" class="spinner">Outer Goals:</label></td>
+          <td><input type="text" id="outerGoals" name="outerGoals" 
+                            value=0 readonly class="spinner"></td>
+          <td>
+            <button type="button" id="outerGoals-up">
+              <span uk-icon="icon: triangle-up"></span>
+            </button>
+            <br>
+            <button type="button" id="outerGoals-down">
+              <span uk-icon="icon: triangle-down"></span>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <p>
+      A spinner is a webpage input for quickly entering integer values.
+      Users press an up or down button to increment or decrement an
+      integer. UIkit was used to add the up and down icons to the
+      buttons and to style the input elements.
+    </p>
+  </div>
+  <div class="uk-card uk-card-default uk-card-body uk-width-large">
+      <h3 class="uk-card-title">Flask and AJAX</h3>
+
+      <!--
+        The response from the server will be put into the <code> element.
+      -->
+      <code id="spinnerOutput"></code>
+      <p>
+          The data above made a round trip to the server and back before
+          being displayed in this webpage. It was sent to the server
+          using a technique called AJAX. The server, which is a python
+          Flask server, sent the JSON text containing the spinner value
+          back to this webpage. JavaScript was used to insert the data
+          from the server into the page in real time.
+      </p>
+
+      <p>
+        See the detailed comments in the source code for
+        <em>templates/child-templates/spinner.html</em> and
+        <em>static/js/spinner.js</em> to see how this works.
+      </p>
+  </div>
+</div>

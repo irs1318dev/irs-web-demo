@@ -1,0 +1,120 @@
+<!--
+  Flask Application for Scouting Technology Demo
+  Local Storage Tab
+  Stacy Irwin, 10 January 2022
+
+  This file contains one of several HTML child templates for a simple
+  Flask application that demonstrates the technologies and frameworks
+  that we'll use in the IRS scouting system for 2022. This file is
+  served by the Flask Python module contained in demo-app.py.
+
+  The Flask server will insert the HTML in this file into the
+  templates/index.html file. See templates.index.html for details.
+-->
+
+<!--
+  Adding `class="uk-container"` to a <div> element adds pleasant
+  margins and alighment to a section of HTML. See 
+  https://getuikit.com/docs/container for more info.
+-->
+<div class="uk-container">
+
+<!--
+  static/js/storage.js contains custom JavaScript functions for
+  working with local browser storage. See the comments in this
+  file for additional explanations.
+
+  Note the `defer` attribute. It delays loading of the JavaScript file
+  until after the rest of the HTML page has loaded.
+-->
+<script src="static/js/storage.js" defer></script>
+
+<h3>Browser Storage Demo</h3>
+<p>
+  Web browsers can store information locally and retain the stored
+  information even after the web page is closed or the browser is
+  shut down. This page demonstrates the
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">
+  Web Storage API</a>, a simple tool for storing a web page's information
+  in the browser.
+</p>
+
+<h4>Put Items in Storage</h4>
+<p>
+  Type some text into the input box and click "Store Item" to put 
+  it in local storage. Do this several times, and then click on the 
+  <em>View Items in Storage</em> button to see the stored values.
+</p>
+<form>
+  <label for="storeItemInput">Item to Store</label>
+  <!--
+    Adding UIKit classes like "uk-input" adds special styling to
+    form elements. See https://getuikit.com/docs/form for more
+    info.
+  -->
+  <input id="storeItemInput" type="text", name="Input Item"
+    class="uk-input uk-form-width-large">
+  <button id="storeItemButton" type="button"
+    class="uk-button uk-button-primary">
+    Store Item
+  </button>
+</form>
+<div id="statusDiv"></div>
+
+<h4>See What's in Storage</h4>
+<button id="viewStorage" class="uk-button uk-button-primary">
+  View Items in Storage
+</button>
+<div id="itemsInStorage"></div>
+<p>
+  Once you have some items in storage, go ahead and close this 
+  browser and reopen it. Come back to this page and click on the
+  <em>View Items in Storage</em> button. You will see that the
+  browser kept the data even after it was closed.
+</p>
+
+<h4>Clear Storage</h4>
+<button id="clearStorage" class="uk-button uk-button-primary">
+  Empty Storage
+</button>
+<p>
+  click on the <em>Empty Storage</em> button to empty the browser's
+  storage.
+</p>
+
+<h4>Why this is Important</h4>
+<p>
+  We don't want our scouting application to lose data if the tablet loses
+  its network connection. We'll want the scouting application to save all
+  data entered by the user and send the data once the network connection
+  is restored. With the <em>Web Storage API</em>, we can save scouting
+  data in the browser until we receive a successful response from the
+  server.
+</p>
+
+<h4>How this Works</h4>
+<p>
+  See the detailed comments in the source code for
+  <em>templates/child-templates/storage.html</em> and
+  <em>static/js/storage.js</em> to see how this works.
+</p>
+
+<h4>Links to Documentation</h4>
+<ul>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage">
+      Introduction to Client-side Storage
+    </a>
+  </li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">
+      Overview of Web Storage API
+    </a>
+  </li>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">
+        <code>Window.localStorage</code> Object
+    </a>
+  </li>
+</ul>
+</div>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+  Flask Application for Scouting Technology Demo
+  Stacy Irwin, 10 January 2022
+
+  This file contains the main HTML template for a a simple Flask
+  application that demonstrates the technologies and frameworks that
+  we'll use in the IRS scouting system for 2022. This file is served
+  by the Flask Python module contained in demo-app.py.
+
+  All files that comprise this application are heavily commented. The
+  comments are intended to explain the technologies so that they can
+  be used in the IRS's scouting system. The examples are helpful, but
+  they are not a substitute for official documentation. Links to
+  official documentation are provided in the comments.
+
+  This webpage uses two external packages: the UIkit CSS framework
+  and the socket.io JavaScript package for websocket communications.
+  UIKit documentation is available at https://getuikit.com and
+  socket.io documentation is available at https://????.
+
+  This HTML file includes Jinja template statements that direct the
+  Flask server to insert content from other files. Jinja statments
+  are contained within curly braces, i.e., `{}`, and are not part of
+  HTML.
+-->
+
+<!-- It's a best practice to specify the language of the HTML page.-->
+<html lang="en-us">
+<head>
+  <title>Scouting Technology Demo</title>
+
+  <!-- It's a best practice to always include these meta elements. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    This tech demo uses the UIkit CSS framwork. See
+    https://getuikit.com/ for details. The following stylesheets and
+    scripts are for the UIkit CSS Framework.
+  -->
+  <link rel="stylesheet" href="/static/uikit/css/uikit.css" />
+  <script src="/static/uikit/js/uikit.min.js"></script>
+  <script src="/static/uikit/js/uikit-icons.min.js"></script>
+</head>
+
+
+<body>
+  <h1>Scouting Technology Demo</h1>
+
+  <!--
+      The <ul uk-tab> element provides the navigation tabs at the top
+      of the page. This functionality is provided by the UIKit CSS
+      framework. See the documentaton at https://getuikit.com/docs/tab
+      and https://getuikit.com/docs/switcher to understand how it
+      works.
+  -->
+  <ul uk-tab>
+    <li><a href="#">Overview</a></li>
+    <li><a href="#">Tech Stack</a></li>
+    <li><a href="#">Spinner, Flask, and AJAX</a></li>
+    <li><a href="#">Local Browser Storage</a></li>
+    <li><a href="#">Web Sockets</a></li>
+  </ul>
+
+  <!--
+    The <div class="uk-switcher"> element contains the HTML content for
+    all of the navigation tabs defined in the preceding <ul uk-tab>
+    element.
+  -->
+  <div class="uk-switcher">
+
+    <!--
+      Each <div> element below contains the content for a different
+      navigation tab.
+
+      HTML files can get long and cumbersome. The Jinja template engine
+      that is used by Flask can help with that. Each *include* statment
+      below causes Flask to insert the content of a different file into
+      this webpage. You can see what HTML is inserted by inspecting the
+      template files in the child-templates subfolder.
+
+      The child template files are inserted into the webpage on the
+      server before the page is sent over the network to the browser.
+      The browser sees only one long webpage and has no idea that the
+      page was assembled from several different files.
+
+      Breaking up a long webpage into child templates is like breaking
+      up a long Python function into smaller functions. It makes the
+      webpage easier to understand and it also makes it easier for
+      different people to author different sections of the webpage.
+
+      Refer to the Flask and Jinja documentation to learn more about
+      Jinja templates. They are available at ???? and ????.
+    -->
+
+    <!-- Overview Tab -->
+    <div>
+      {% include "child-templates/overview.html" %}
+    </div>
+
+    <!-- Tech Stack TAB -->
+    <!--
+      Attributes and class names that start with "uk-" are part of the
+      UIKit framework. The "uk-position-center-right" class aligns the
+      <div> element on the right side of the page.
+    -->
+    <div>
+      {% include "child-templates/tech-stack.html" %}
+    </div>
+
+    <!-- Spinner Tab -->
+    <div>
+      {% include "child-templates/spinner.html" %}
+    </div>
+ 
+    <!-- Local Storage Tab -->
+    <div>
+      {% include "child-templates/storage.html" %}
+    </div>
+
+    <!-- Web Sockets Tab -->
+    <div>
+      {% include "child-templates/socket.html" %}
+    </div>
+
+  </div>
+</body>
+</html>

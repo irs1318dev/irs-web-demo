@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Scouting Technology Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    This tech demo uses the UIkit CSS framwork. See https://getuikit.com/
+    for details. The following stylesheets and scripts are for the
+    UIkit CSS Framework.
+  -->
+  <link rel="stylesheet" href="/static/uikit/css/uikit.css" />
+  <script src="/static/uikit/js/uikit.min.js"></script>
+  <script src="/static/uikit/js/uikit-icons.min.js"></script>
+
+  <!-- For Socket.IO -->
+  <script src="/static/socket.io/socket.io.min.js"></script>
+
+  <!-- Custom Javascript code -->
+  <script src="/static/js/socket.js" defer></script>
+</head>
+
+<body>
+  <h1>Web Sockets Test</h1>
+  <h2>Alliance: {{ alliance }}, Station: {{ station }}</h2>
+  <div id="station" hidden>{{ alliance }}-{{ station }}</div>
+
+  <h3>Incoming Messages</h3>
+  <pre id="log"></pre>
+
+  <!-- <input id="message" type="text"
+         class="widget-ui ui-widget-content ui-corner-all">
+  <button id="send">Send Message</button>
+
+  <h3>Incoming Messages</h3>
+  <ol id="messages"></ol> -->
+
+
+</body>
+</html>

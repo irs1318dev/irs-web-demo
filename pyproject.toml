@@ -1,0 +1,28 @@
+[project]
+name = "irs-web-demo"
+version = "1.0.0"
+description = "Demonstration project for HTML, CSS, Javascript, Flask, and websockets."
+authors = [
+    {name = "irwinsnet", email = "stacy.k.irwin@gmail.com"},
+]
+dependencies = [
+    "flask>=3.1.0",
+    "flask-socketio>=5.4.1",
+    "eventlet>=0.38.0",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[project.scripts]
+web-demo = "irs_web.run_server:main"
+
+

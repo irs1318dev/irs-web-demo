@@ -1,0 +1,152 @@
+<!--
+  Flask Application for Scouting Technology Demo
+  Web Sockets Tab
+  Stacy Irwin, 10 January 2022
+
+  This file contains one of several HTML child templates for a simple
+  Flask application that demonstrates the technologies and frameworks
+  that we'll use in the IRS scouting system for 2022. This file is
+  served by the Flask Python module contained in demo-app.py.
+
+  The Flask server will insert the HTML in this file into the
+  templates/index.html file. See templates.index.html for details.
+
+  JavaScript
+
+-->
+<div class="uk-container">
+  <!--
+    Socket.IO allows servers to send messages to clients (i.e., browsers)
+    without first receiving a request from the client. This mode of
+    communication uses an API called WebSocket. WebSocket is natively
+    supported by modern browsers, but I suspect we'll have better luck
+    if we use the Socket.IO framework, which is built on top of
+    WebSocket.
+
+    The following <script> tag links to the Socket.IO's JavaScript
+    library. It was downloaded from the Socket.IO Github library. See
+    https://socket.io/docs/v4/client-installation/ for more details.
+  -->
+  <script src="static/socket.io/socket.io.min.js"></script>
+
+  <!-- This script contains custom functions for this demo. -->
+  <script src="static/js/socket.js" defer></script>
+
+  <h3>Web Sockets</h3>
+  <p>
+    Web Sockets is a communications protocol that supports transfer of
+    data between web servers and browsers. It is designed to work
+    alongside HTTP. With HTTP, web servers can only send information to
+    clients (i.e., browsers) in response to a HTTP request. Web Sockets
+    allow servers to push information to browsers without first
+    receiving a request. This feature makes it easier to implement
+    features like chat or live updates.
+  </p>
+  <p>
+    Try out this example chat application. First open a few other
+    station webpages using the links below. Then send messages to the
+    other stations. You can select more than one station by holding
+    down SHIFT or CTRL when you click on a staion. You will see the
+    messages appear in the other webpages instantaneously. The
+    server-side code is in <em>templates/demo-app.py</em> and the
+    client-side code is in <em>static/js/socket.js</em>.
+  </p>
+
+  <!--
+    This <div> element does not appear on the page due to it's
+    hidden attribute. It is used by the server to identify which client
+    is sending messages.
+  -->
+  <div id="station" hidden>server</div>
+
+  <!-- This div element displays a log of outgoing information. -->
+  <pre id="log"></pre>
+
+  <!--
+    These links open other webpages. We'll use web sockets to send
+    chat messages to the other web pages. The template for these
+    pages is in templates.station.html
+  -->
+  <h4>1. Click One or More Links to Open Other Webpages</h4>
+  <!--
+    The uk-grid-small and uk-width-*-* classes are used to layout
+    the hyperlinks. See https://getuikit.com/docs/grid and
+    https://getuikit.com/docs/width for more info.
+  -->
+  <div class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-6" style="background-color: lightcyan;">
+      <ul>
+        <li><a href="station/blue/1" target="_blank">Blue 1</a></li>
+        <li><a href="station/blue/2" target="_blank">Blue 2</a></li>
+        <li><a href="station/blue/3" target="_blank">Blue 3</a></li>
+      </ul>
+    </div>
+    <div  class="uk-width-1-6" style="background-color: mistyrose;">
+      <ul>
+        <li><a href="station/red/1" target="_blank">Red 1</a></li>
+        <li><a href="station/red/2" target="_blank">Red 2</a></li>
+        <li><a href="station/red/3" target="_blank">Red 3</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!--
+    This section contains the web form controls that are used to send
+    messages to the station web pages.
+  -->
+  <h4>2. Send Messages to Other Webpages</h4>
+    <form class="uk-grid-medium" uk-grid>
+      <div class="uk-width-1-6">
+        <label for="selectStations" class="uk-form-label">
+          Select Stations
+        </label>
+        <!-- The `multiple` attribute enaables selection of multiple items. -->
+        <select id="selectStations" multiple size="6" class="uk-select">
+          <option>Blue 1</option>
+          <option>Blue 2</option>
+          <option>Blue 3</option>
+          <option>Red 1</option>
+          <option>Red 2</option>
+          <option>Red 3</option>
+        </select>
+      </div>
+      <div class="uk-width-1-2">
+        <label for="messageText">Send Message</label>
+        <input id="messageText" type="text" class="uk-text-area">
+        <button id="sendSocketMessage" type="button"
+                class="uk-button uk-button-primary">
+          Send
+        </button>
+      </div>
+    </form>
+  <h3>Documentation</h3>
+  <p>
+    Using web sockets with Flask apps is tricky because we have to coordinate
+    actions between the browser and server. Another thing that makes it tricky
+    is that the server-side package (Flask-SocketIO) and server-side package
+    (socket.io) were made by different people and have separate documentation.
+  </p>
+  <ul>
+    <li>
+      <dt><a href="https://socket.io/">Socket.io</a></dt>
+      <dd>
+        This demo uses JavaScript functions provided by Socket.io. Web
+        sockets are built into JavaScript, so it's not absolutely necessary to
+        use the socket.io package. The demo uses it because it provides helpful
+        features that are not part of the core JavaScript web socket functions,
+        and because it works well with Flask. Socket.io provides both client
+        and server-side JavaScript modules. We are only using the client
+        modules.
+      </dd>
+    </li>
+    <li>
+      <dt><a href="https://flask-socketio.readthedocs.io/en/latest/">
+        Flask-SocketIO</a></dt>
+        <dd>
+          Flask-SocketIO is an extension to the Flask framework that adds the
+          ability to work with webpages that use socket.io in the browser.
+        </dd>
+    </li>
+  </ul>
+
+</div>
