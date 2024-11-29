@@ -1,7 +1,7 @@
 <!--
   Flask Application for Scouting Technology Demo
   HTML, CSS, and JavaScript Tab
-  Stacy Irwin, 10 January 2022
+  Stacy Irwin, 10 January 2022. Updated on 29 Nov 2024.
 
   This file contains one of several HTML child templates for a simple
   Flask application that demonstrates the technologies and frameworks
@@ -43,12 +43,11 @@
       JavaScript
     </a></dt>
     <dd>
-      The demo app uses the newest version of JavaScript
-      (ECMAScript 2018) and is not expected to work in older browsers
-      (pre-2017). We are targeting Google's Chrome browser
-      (version 63 or newer, Dec 2017), but the system should work in
-      other modern browsers such as Microsoft's Edge (ver 79 or newer,
-      Jan 2020) or Apple's Safari (ver 11, Sep 2017) browsers.
+      We use some old Android tablets to access the IRS scouting system, so
+      we only use JavaScript features that were available in version 63
+      (Dec 2017) of Google's Chrome browser. The should work fine in
+      newer browsers such as Microsofts Edge, Apple Safari, or Mozilla
+      Firefox.
     </dd>
     <dt><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
       Cascading Style Sheets (CSS)</a></dt>
@@ -86,28 +85,28 @@
       web socket programming.
     </dd>
   <h3>Server Side Technology Stack</h3>
-    <dt><a href="https://docs.python.org/3.9/">Python</a></dt>
+    <dt><a href="https://docs.python.org/3.12/">Python</a></dt>
     <dd>
       Python is a dynamic interpreted language that is relatively easy
-      to learn and is well suited for data analysis tasks. the app uses
-      Python version 3.9, which is the 2nd-newest version.
+      to learn and is well suited for data analysis tasks. The app uses
+      Python version 3.12, which is the 2nd-newest version.
     </dd>
-    <dt><a href="https://flask.palletsprojects.com/en/2.0.x/">
+    <dt><a href="https://flask.palletsprojects.com/en/stable/">
       Flask Framework
     </a></dt>
     <dd>
       A Python module for creating dynamic web pages. Dynamic pages are
       created on the fly, when users request them.
     </dd>
-    <dt><a href="https://jinja.palletsprojects.com/en/3.0.x/">
+    <dt><a href="https://jinja.palletsprojects.com/en/stable/">
       Jinja Templates
     </a></dt>
     <dd>
       Flask is designed to work with the Jinja package, which provides
       tools to assemble web pages in response to user queries. See the
-      <a href="https://flask.palletsprojects.com/en/2.0.x/">
+      <a href="https://flask.palletsprojects.com/en/stable/">
         Flask Documentation</a> or the 
-        <a href="https://jinja.palletsprojects.com/en/3.0.x/">
+        <a href="https://jinja.palletsprojects.com/en/stable/">
           Jinja Documentation</a>
       for more information on Jinja templates.
     </dd>
@@ -135,7 +134,7 @@
     </dd>
     <h3>Scouting System Tech Stack</h3>
     <p>
-      The scouting system will use all of the components listed above
+      The scouting system uses all of the components listed above
       and a few more, including:
     </p>
     <ul>
@@ -164,11 +163,20 @@
       </li>
       <li>
         <dt>
-          <a href="https://docs.bokeh.org/en/latest/">Bokeh</a>
+          <a href="https://plotly.com/python/">Plotly</a>
         </dt>
         <dd>
           A Python package for creating interactive data
           visualizations.
+        </dd>
+      </li>
+      <li>
+        <dt>
+          <a href="https://dash.plotly.com/">Dash</a>
+        </dt>
+        <dd>
+          A Python package for creating interactive web applications. Dash and
+          Plotly are designed to work together.
         </dd>
       </li>
     </ul>

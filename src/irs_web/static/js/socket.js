@@ -1,7 +1,7 @@
 /*
 Flask Application for Scouting Technology Demo
 JavaScript Functions for Socket.io and Web Sockets
-Stacy Irwin, 10 Jan 2022
+Stacy Irwin, 10 Jan 2022. Updated on 29 Nov 2024.
 
 This JavaScript module contains functions that use web sockets to
 communicate between the server and browser. Many of the functions

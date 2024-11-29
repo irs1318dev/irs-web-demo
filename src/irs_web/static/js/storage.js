@@ -1,7 +1,7 @@
 /*
 Flask Application for Scouting Technology Demo
 JavaScript Functions Local Browser Storage
-Stacy Irwin, 10 Jan 2022
+Stacy Irwin, 10 Jan 2022. Updated on 29 Nov 2024.
 
 JavaScript allows applications to store information locally within a
 web browser. The storage is persistant, meaning a user can close the

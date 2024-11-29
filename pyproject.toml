@@ -23,6 +23,6 @@ build-backend = "pdm.backend"
 distribution = true
 
 [project.scripts]
-web-demo = "irs_web.run_server:main"
+web-demo = "irs_web.main:main"
 
 

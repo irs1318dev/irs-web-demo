@@ -1,14 +1,14 @@
 """Flask Application for Scouting Technology Demo
 
-Stacy Irwin, 10 January 2022
+Stacy Irwin, 10 January 2022. Updated on 29 Nov 2024.
 
 This Python module contains a simple Flask application that
-demonstrates the technologies and frameworks that we'll use in the
-IRS Scouting System for 2022.
+demonstrates the technologies and frameworks that we use in the
+IRS Scouting System.
 
 All files that comprise this application are heavily commented. The
-comments are intended to explain the technologies so that they can
-be used in the IRS's scouting system. The examples are helpful, but
+comments are intended to explain the technologies so that ar
+used in the IRS's scouting system. The examples are helpful, but
 they are not a substitute for official documentation. Links to
 official documentation are provided in the comments.
 
@@ -16,30 +16,29 @@ official documentation are provided in the comments.
 Carefully read the source code in this Python module and in the related
 HTML and JavaScript files. They have lots of comments that explain how
 they work. Here are the files that have explanatory comments:
-* templates/index.html
-* templates/station.html
-* templates/child-templates/overview.html
-* templates/child-templates/hcj.html
-* templates/child-templates/ukit.html
-* templates/child-templates/spinner.html
-* templates/child-templates/storage.html
-* templates/child-templates/socket.html
-* static/js/spinner.js
-* static/js/storage.js
-* static/js/socket.js
+* src/irw_web/templates/index.html
+* src/irw_webtemplates/station.html
+* src/irw_webtemplates/child-templates/overview.html
+* src/irw_webtemplates/child-templates/hcj.html
+* src/irw_webtemplates/child-templates/ukit.html
+* src/irw_webtemplates/child-templates/spinner.html
+* src/irw_webtemplates/child-templates/storage.html
+* src/irw_webtemplates/child-templates/socket.html
+* src/irw_webstatic/js/spinner.js
+* src/irw_webstatic/js/storage.js
+* src/irw_webstatic/js/socket.js
 
 This app uses two external packages: UIKit, and socket.io.
-Don't bother reading the JavaScript or CSS files for these packages.
+Don't bother reading the UIKit or socket.io JavaScript or CSS files.
 You do not need to understand the internal workings of these packages.
 You only need to understand their public interface. Besides, the files
 have been minified, which means they've been compressed to reduce load
-time, so they are incomprehensible to humans.
+time. They are incomprehensible to humans.
 
 ## Run the Application
 You should also run this demo application. The demo requires several
-Python packages to run. Clone or pull from this Github repository to
-get the files, then open and follow the instructions in
-conda-setup.ps1 to set up your Python environment to run this demo.
+Python packages to run. Follow the instructions in README.md to install the
+dependencies and run the web application.
 """
 
 # ===== Imports =======================================================
@@ -308,20 +307,16 @@ def add_nocache_headers(response):
 
 # ===== Run the Server ================================================
 # We use a different process to start the server when using the
-# Flask-SocketIO extension. All you have to do is run this Python
-# module from the command line. There is no need for environment
-# variables.
-# 
-# Start the server to run this demo with this command:
-# `python demo-app.py`
+# Flask-SocketIO extension. Running the `web-demo` at the Terminal or
+# PowerShell prompt causes the `main()` function below to be executed.
 #
 # This application requires that the Python eventlet package is
 # installed. The eventlet package provides a Flask and socket.io
 # compatible webserver that we can use for development and for
 # running the scouting system at FRC competitions.
 #
-# The socketio.run() function will run when this module is run
-# from the command line. We're using three parameters:
+# The socketio.run() function will run when the `main()` function is executed.
+# We're using three parameters:
 # * app:   This is the variable that contains the Flask application
 #          object. It was created back at line 63 or thereabouts. This
 #          parameter is always required.

@@ -1,7 +1,7 @@
 /*
 Flask Application for Scouting Technology Demo
 JavaScript functions for spinner demo
-Stacy Irwin, 10 Jan 2022
+Stacy Irwin, 10 Jan 2022. Updated on 29 Nov 2024.
 
 A spinner is a user interface component for quickly entering integer
 values. It consists of a text input and two buttons. One button
